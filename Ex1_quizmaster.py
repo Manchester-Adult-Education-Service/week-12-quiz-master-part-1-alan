@@ -45,6 +45,10 @@ import json # This will be used in Task 6 and Extension 3
 # 4. Print the current 'player_score' using an f-string: "Your current score is 0."
 #
 # Write your code below:
+player_score = 0
+max_score = 10
+print("Welcome to The Ultimate Python Quiz!")
+print(f"Your current score is {player_score}.")
 
 
 
@@ -79,6 +83,13 @@ import json # This will be used in Task 6 and Extension 3
 # HINT: You will need to use the **'int()'** function to convert the input from text to a number.
 #
 # Write your code below:
+print("\n--- Testing Basic Functions ---")
+answer1 = int(input("Q1: What is 7 * 5? "))
+if answer1 == 35:
+    print("Correct!")
+    player_score += 1
+else:
+    print("Incorrect. The answer was 35.")
 
 
 
@@ -113,6 +124,13 @@ import json # This will be used in Task 6 and Extension 3
 # 6. Print the closing "--- End of Basic Test ---\n"
 #
 # Write your code below:
+answer2 = input("Q2: Which conditional keyword means 'otherwise, if'? ").lower()
+if answer2 == "elif":
+    print("You got it!")
+    player_score += 1
+else:
+    print("Not quite. It was ELIF.")
+print("--- End of Basic Test ---\n")
 
 
 
@@ -161,6 +179,12 @@ import json # This will be used in Task 6 and Extension 3
 # ]
 #
 # Write your code below:
+quiz_questions = [
+    { 'question': 'What is 7 multiplied by 6?', 'answer': 42, 'type': 'int' },
+    { 'question': 'Which conditional keyword is used for multiple conditions?', 'answer': 'ELIF', 'type': 'str' },
+    { 'question': 'How many days are in a leap year?', 'answer': 366, 'type': 'int' },
+    { 'question': 'What kind of structure uses the `[]` square brackets?', 'answer': 'LIST', 'type': 'str' }
+]
 
 
 
