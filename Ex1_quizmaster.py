@@ -185,8 +185,7 @@ quiz_questions = [
     { 'question': 'How many days are in a leap year?', 'answer': 366, 'type': 'int' },
     { 'question': 'What kind of structure uses the `[]` square brackets?', 'answer': 'LIST', 'type': 'str' }
 ]
-
-
+print(quiz_questions)
 
 
 # -------------------------------------------
@@ -220,6 +219,44 @@ quiz_questions = [
 # 4. **Comment out** the line that calls the function for now, as we will use it in Task 7.
 #
 # Write your code below:
+def run_quiz(questions):
+    global player_score, max_score
+    player_score = 0
+    max_score = len(questions)
+
+    if max_score == 0:
+        print("No questions loaded to run the quiz.")
+        return
+    for i, q in enumerate(questions):
+        user_answer = None
+        while user_answer is None:
+            prompt = f"Q{i+1}: {q['question']} "
+            user_input = input(prompt)
+
+            try:
+                if q['type'] == 'int':
+                    user_answer = int(user_input)
+                elif q['type'] == 'str':
+                    user_answer = user_input.upper()
+            except ValueError:
+                print("Error: Please enter a whole number.")
+                user_answer = None
+        if user_answer == q['answer']:
+            print("Correct!")
+            player_score += 1
+        else:
+            print(f"Incorrect. The answer was {q['answer']}.")
+    print("--------------------------")
+    
+    if max_score > 0:
+        percentage = (player_score / max_score) * 100
+        print(f"Final Score: {player_score}/{max_score} ({percentage:.0f}%)")
+
+        if percentage >= 80:
+            print("Excellent job!")
+        else:
+            print("Keep practising!")
+            
 
 
 
