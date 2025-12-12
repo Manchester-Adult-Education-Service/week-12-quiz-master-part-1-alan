@@ -257,7 +257,7 @@ def run_quiz(questions):
         else:
             print("Keep practising!")
             
-
+run_quiz(quiz_questions)
 
 
 
